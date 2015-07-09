@@ -38,19 +38,19 @@ type Question struct {
 }
 
 type Section struct {
-	Name     string `json:"name"`
-	Type     string `json:"type"`
-	Class    string `json:"class"`
-	Ttl      uint32 `json:"ttl"`
-	Rdlength uint16 `json:"rdlength"`
-	Rdata    string `json:"rdata"`
+        Name     string `json:"qname"`
+        Type     string `json:"qtype"`
+        Class    string `json:"class"`
+        Ttl      uint32 `json:"ttl"`
+        Rdlength uint16 `json:"rdlength"`
+        Rdata    string `json:"content"`
 }
 
 type Message struct {
-	Question   []*Question `json:"question"`
-	Answer     []*Section  `json:"answer"`
-	Authority  []*Section  `json:"authority,omitempty"`
-	Additional []*Section  `json:"additional,omitempty"`
+        Question   []*Question `json:"question"`
+        Answer     []*Section  `json:"result"`
+        Authority  []*Section  `json:"authority,omitempty"`
+        Additional []*Section  `json:"additional,omitempty"`
 }
 
 // Return rdata
